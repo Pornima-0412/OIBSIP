@@ -1,6 +1,6 @@
-# Customer Segmentation Analysis
+Customer Segmentation Analysis
 
-## Oasis Infobyte Data Analytics Internship
+Oasis Infobyte Data Analytics Internship
 
 **Level:** 1  
 **Task:** 2 – Customer Segmentation Analysis  
@@ -8,13 +8,13 @@
 
 ---
 
-## 1. Project Overview
+1. Project Overview
 
 This project focuses on segmenting e-commerce customers based on their purchasing behaviour using RFM (Recency, Frequency, Monetary) analysis and the K-Means clustering algorithm.
 
 The goal is to identify different customer groups and provide targeted marketing recommendations to improve customer engagement and retention.
 
-## 2. Objectives
+2. Objective
 
 - Analyse customer purchasing behaviour.
 - Calculate Recency, Frequency, and Monetary values.
@@ -22,26 +22,26 @@ The goal is to identify different customer groups and provide targeted marketing
 - Visualise and profile the customer groups.
 - Provide business insights and marketing recommendations.
 
-## 3. Dataset
+3. Dataset
 
-- **Dataset Name:** Online Retail Dataset
-- **Source:** UCI Machine Learning Repository
-- **Link:** https://archive.ics.uci.edu/dataset/352/online+retail
+**Dataset Name:** Online Retail Dataset  
+**Source:** UCI Machine Learning Repository  
+**Link:** https://archive.ics.uci.edu/dataset/352/online+retail
 
 The dataset contains 541,909 transaction records from a UK-based online retailer.
 
-### Dataset Columns
+Dataset Features
 
-- InvoiceNo
-- StockCode
-- Description
-- Quantity
-- InvoiceDate
-- UnitPrice
-- CustomerID
-- Country
+- InvoiceNo – Invoice number
+- StockCode – Product code
+- Description – Product description
+- Quantity – Quantity purchased
+- InvoiceDate – Transaction date and time
+- UnitPrice – Price per unit
+- CustomerID – Customer identification number
+- Country – Customer's country
 
-## 4. Tools and Technologies
+4. Tools and Technologies
 
 - Python
 - Pandas
@@ -51,61 +51,70 @@ The dataset contains 541,909 transaction records from a UK-based online retailer
 - Scikit-learn
 - Jupyter Notebook
 
-## 5. Project Workflow
+5. Project Workflow
 
 1. Data loading and inspection
 2. Data cleaning and preprocessing
 3. Exploratory data analysis
 4. RFM feature engineering
 5. Feature scaling using StandardScaler
-6. K-Means clustering
-7. Cluster visualisation and profiling
-8. Business insights and recommendations
+6. Optimal cluster selection using the Elbow Method
+7. K-Means clustering with four clusters
+8. Cluster visualisation and profiling
+9. Business insights and recommendations
 
-## 6. Customer Segmentation Results
+6. Data Cleaning
 
-Four customer segments were identified using K-Means clustering.
+- Removed records with missing CustomerID values.
+- Removed cancelled invoices.
+- Removed transactions with non-positive quantities or prices.
+- Calculated TotalAmount using Quantity × UnitPrice.
 
-| Cluster | Recency | Frequency | Monetary |
-|---|---:|---:|---:|
-| 0 | 18.12 | 2.15 | 551.82 |
-| 1 | 12.13 | 13.71 | 8074.27 |
-| 2 | 71.08 | 4.08 | 1802.83 |
-| 3 | 182.50 | 1.32 | 343.45 |
+The cleaned dataset contained 397,884 transaction records.
 
-## 7. Business Insights and Recommendations
+7. RFM Analysis
 
-### Cluster 0 – Recent, Occasional Customers
-These customers purchased recently but have relatively low purchase frequency and spending.
+Three customer behaviour features were calculated:
 
-**Recommendation:** Use welcome-back offers, product recommendations, and personalised promotions to encourage repeat purchases.
+- **Recency:** Number of days since the customer's most recent purchase.
+- **Frequency:** Number of distinct invoices per customer.
+- **Monetary:** Total amount spent by each customer.
 
-### Cluster 1 – Loyal, High-Value Customers
-These customers purchase frequently and have the highest average monetary value.
+The analysis identified 4,338 unique customers.
 
-**Recommendation:** Provide loyalty rewards, exclusive discounts, VIP benefits, and early access to new products.
+8. Customer Segmentation Results
 
-### Cluster 2 – Moderately Active Customers
-These customers show moderate purchase frequency and spending but have not purchased as recently as the first two segments.
+The Elbow Method was used to select four clusters.
 
-**Recommendation:** Use personalised product suggestions, limited-time offers, and targeted campaigns to increase engagement.
+| Cluster | Number of Customers | Customer Segment |
+|---|---:|---|
+| 0 | 837 | Recent, Occasional Customers |
+| 1 | 716 | Loyal, High-Value Customers |
+| 2 | 1,173 | Moderately Active Customers |
+| 3 | 1,612 | At-Risk or Inactive Customers |
 
-### Cluster 3 – At-Risk or Inactive Customers
-These customers have the highest average recency and relatively low purchase frequency and spending.
+9. Business Insights and Recommendations
 
-**Recommendation:** Run re-engagement campaigns, send special discount coupons, and provide incentives to encourage another purchase.
+- **Cluster 0:** Encourage repeat purchases through personalised promotions and product recommendations.
+- **Cluster 1:** Reward loyal, high-value customers with VIP benefits, exclusive discounts, and loyalty rewards.
+- **Cluster 2:** Increase engagement through targeted campaigns and limited-time offers.
+- **Cluster 3:** Run re-engagement campaigns and offer incentives to encourage customers to return.
 
-## 8. Conclusion
+10. Conclusion
 
-RFM analysis and K-Means clustering helped identify four distinct customer segments. The results can help businesses understand customer purchasing behaviour and develop targeted marketing strategies to improve customer engagement, retention, and sales.
+The project successfully segmented e-commerce customers into four groups using RFM analysis and K-Means clustering.
 
-## 9. Project Files
+The results provide useful insights into customer purchasing behaviour and can help businesses develop targeted marketing strategies, improve customer retention, and make data-driven decisions.
 
-- `PornimaNerkar_Task2_Customer_Segmentation.ipynb` – Jupyter Notebook containing the analysis and visualisations.
-- `Online Retail.xlsx` – Dataset used for the analysis.
+11. Project Files
+
+- `PornimaNerkar_Task2_Customer_Segmentation.ipynb` – Jupyter Notebook containing the complete analysis and visualisations.
+- `Online Retail.xlsx` – Original dataset used for the analysis.
 - `README.md` – Project documentation.
 
-## 10. Author
+---
 
-**Pornima Onkar Nerkar**  
-Oasis Infobyte Data Analytics Intern
+**Intern:** Pornima Onkar Nerkar  
+**Organisation:** Oasis Infobyte  
+**Track:** Data Analytics  
+**Task:** Level 1 – Task 2
